@@ -8,6 +8,29 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ["babel-loader"]
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.cm$/,
+        use: [
+          {
+            loader: "style-loader",
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: "[path]___[name]__[local]___[hash:base64:5]"
+            }
+          }
+        ]
       }
     ]
   },
