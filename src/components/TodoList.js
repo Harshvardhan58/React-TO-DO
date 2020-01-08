@@ -55,10 +55,6 @@ export default class TodoList extends Component {
   constructor(props) {
     super(props);
     this.create_empty_item();
-    this.new_item.title = "title";
-    this.new_item.description = "description";
-    this.new_item.priority = 4;
-    TodoItemList.add(this.new_item);
   }
   create_empty_item = () => {
     this.new_item = TodoItemList.new_item();
